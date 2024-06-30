@@ -1,73 +1,92 @@
-# Content Based Recommendation Engines using Python
+# Movie Recommendation Engines
 
-This project demonstrates the implementation of content-based recommendation engines using Python. The project leverages movie data from TMDB (The Movie Database) to build a recommendation system that suggests movies based on their content.
+This repository contains data and Jupyter notebooks for building content-based and collaborative-based recommendation engines using the TMDB 5000 Movies dataset.
+
+## Files in this Repository
+
+1. **Datasets:**
+   - `tmdb_5000_movies.csv`: Contains metadata about 5000 movies from The Movie Database (TMDB).
+   - `tmdb_5000_credits.csv`: Contains cast and crew information for the same set of movies.
+
+2. **Jupyter Notebooks:**
+   - `Content Based Recommendation Engines using Python.ipynb`: A notebook demonstrating how to build a content-based recommendation engine.
+   - `Collaborative Based Recommendation Engines using Python.ipynb`: A notebook demonstrating how to build a collaborative-based recommendation engine.
 
 ## Project Structure
 
-- `Content Based Recommendation Engines using Python.ipynb`: This Jupyter Notebook contains the implementation of the recommendation engines.
-- `tmdb_5000_movies.csv`: This dataset contains information about 5000 movies, including their title, genres, overview, and other metadata.
-- `tmdb_5000_credits.csv`: This dataset contains information about the cast and crew for the 5000 movies.
+
+Movie-Recommendation-Engines/
+│
+├── data/
+│   ├── tmdb_5000_movies.csv
+│   ├── tmdb_5000_credits.csv
+│
+├── notebooks/
+│   ├── Content Based Recommendation Engines using Python.ipynb
+│   ├── Collaborative Based Recommendation Engines using Python.ipynb
+│
+├── README.md
+│
+
 
 ## Getting Started
 
 ### Prerequisites
 
-To run this project, you need to have Python installed on your machine along with the following libraries:
+Ensure you have the following installed:
 
-- pandas
-- numpy
-- scikit-learn
-- nltk
+- Python 3.6 or higher
+- Jupyter Notebook or Jupyter Lab
+- The following Python libraries:
+  - pandas
+  - numpy
+  - scikit-learn
+  - ast
 
-You can install the required libraries using pip:
+### Installation
 
-```bash
-pip install pandas numpy scikit-learn nltk
-```
-
-### Running the Project
-
-1. **Clone the repository**:
-
+1. Clone the repository to your local machine:
    
-   git clone https://github.com/Vaahnitha-18/content-Based-recommendation.git
-   
-
-2. **Navigate to the project directory**:
-
-   
-   cd content-based-recommendation-engine
+   git clone https://github.com/Vaahnitha-18/recommendation-system.git
   
 
-3. **Open the Jupyter Notebook**:
-
+2. Navigate to the project directory:
    
-   jupyter notebook "Content Based Recommendation Engines using Python.ipynb"
+   cd recommendation-system
+   
+3. (Optional) Create and activate a virtual environment:
+   
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    
 
-4. **Run the Notebook**: Follow the instructions in the notebook to run the cells and execute the code.
+4. Install the required packages:
+   
+   pip install pandas numpy scikit-learn
+  
+
+### Running the Notebooks
+
+1. Start Jupyter Notebook or Jupyter Lab:
+   
+   jupyter notebook
+   
+
+2. Open and run the notebooks located in the `notebooks` directory.
 
 ## Project Overview
 
-The project consists of the following key sections:
+### Content-Based Recommendation Engine
 
-1. **Data Loading and Preprocessing**: This section involves loading the datasets (`tmdb_5000_movies.csv` and `tmdb_5000_credits.csv`) and performing initial data cleaning and preprocessing.
+The content-based recommendation engine analyzes the metadata of movies to recommend similar movies to the user. This approach leverages features such as genres, keywords, and movie descriptions.
 
-2. **Feature Extraction**: In this section, features such as the movie overview, genres, and cast are extracted and transformed into numerical representations using techniques like TF-IDF and Count Vectorizer.
+### Collaborative-Based Recommendation Engine
 
-3. **Similarity Calculation**: This section calculates the similarity between movies using cosine similarity based on the extracted features.
+The collaborative-based recommendation engine uses user data to recommend movies. This method relies on user ratings and behavior to find patterns and suggest movies that similar users have enjoyed.
 
-4. **Recommendation Function**: A function is implemented to provide movie recommendations based on the similarity scores.
+## Acknowledgments
 
-5. **Evaluation**: The performance of the recommendation engine is evaluated and visualized.
+- The Movie Database (TMDB) for providing the datasets.
 
-## Results
+## License
 
-The recommendation engine successfully suggests movies that are similar in content to the input movie. The similarity is determined based on the movie overview, genres, and cast information.
-
-## Future Work
-
-- Incorporate additional features such as directors, keywords, and production companies to improve recommendation accuracy.
-- Experiment with different similarity measures and machine learning algorithms.
-- Build a web application to provide an interactive interface for the recommendation engine.
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
